@@ -281,80 +281,13 @@
             <a href="mailto:ercelantonis.com">ercelantonis@gmail.com</a><br>
             <p>Im Ercel Jay Antonis, 19 years old i live in brgy, Calantas Casiguran Aurora, I am Student I would describe myself as an open and honest person who doesn't believe in misleading other people and tries to be fair in everything I do.</p>
         </div>
-
-        <br><br>
-
-        <h2>Rate Your 2 Groupmates</h2>
-
-        <form id="ratingForm" action="https://formspree.io/f/laurestavincejade@gmail.com" method="POST">
-        <table>
-            <thead>
-                <tr>
-                    <th>Groupmate</th>
-                    <th>Name</th>
-                    <th>Rating (1-10)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Groupmate 1</td>
-                    <td><input type="text" name="name1" placeholder="Groupmate 1" required></td>
-                    <td><input type="number" name="rating1" min="1" max="10" required></td>
-                </tr>
-                <tr>
-                    <td>Groupmate 2</td>
-                    <td><input type="text" name="name2" placeholder="Groupmate 2" required></td>
-                    <td><input type="number" name="rating2" min="1" max="10" required></td>
-                </tr>
-            </tbody>
-        </table>
-
-        <input type="submit" value="Submit Ratings">
-    </form>
-
-        <br><br><br><br>
-    </section>
-
+        
     <br><br><br><br>
 
     <footer>
         &copy; 2023 School of Information Technology. All rights reserved.
     </footer>
 
-    <script>
-        document.getElementById('ratingForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-    
-            const name1 = document.getElementsByName('name1')[0].value;
-            const rating1 = document.getElementsByName('rating1')[0].value;
-            const name2 = document.getElementsByName('name2')[0].value;
-            const rating2 = document.getElementsByName('rating2')[0].value;
-    
-            const formData = new FormData();
-            formData.append('Groupmate 1 Name', name1);
-            formData.append('Groupmate 1 Rating', rating1);
-            formData.append('Groupmate 2 Name', name2);
-            formData.append('Groupmate 2 Rating', rating2);
-    
-            fetch('https://formspree.io/f/your_formspree_email', {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json',
-                },
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Formspree Response:', data);
-                alert('Ratings submitted successfully!');
-              
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('Error submitting ratings. Please try again later.');
-            });
-        });
-    </script>
     
 </body>
 </html>
